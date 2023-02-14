@@ -1,0 +1,17 @@
+
+        a = [0]
+    b = [0]
+    c = [0]
+    d = [0]
+    e = [0]
+    for i in range(len(processSize)):
+        a.append(i + 1)
+        b.append(processSize[i])
+        c.append(baseSize[allocation[i]]) if allocation[i] != -1 else c.append('N/A')
+        d.append(blockSize[allocation[i]]) if allocation[i] != -1 else d.append('N/A')
+        e.append(allocation[i] + 1 ) if allocation[i] != -1 else e.append('N/A')
+
+    f = [a,b, c, d, e]
+
+    df = pd.DataFrame(f, columns =["Process No.", "Process Size", " Original blockSize","remaining blockSize","Block no."])
+    print(df)
